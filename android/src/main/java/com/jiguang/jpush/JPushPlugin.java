@@ -52,7 +52,6 @@ public class JPushPlugin implements FlutterPlugin, MethodCallHandler {
         this.callbackMap = new HashMap<>();
         this.sequence = 0;
         this.getRidCache = new ArrayList<>();
-        instance = this;
     }
 
 
@@ -61,6 +60,7 @@ public class JPushPlugin implements FlutterPlugin, MethodCallHandler {
         channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "jpush");
         channel.setMethodCallHandler(this);
         context = flutterPluginBinding.getApplicationContext();
+        instance = this;
     }
 
 
